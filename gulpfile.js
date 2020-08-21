@@ -27,18 +27,18 @@ let gulp              = require('gulp'),
      //.pipe(sass({outputStyle:'compressed'}))
      .pipe(sass({outputStyle:'nested'}))      //конвертируем scss в css и импортируем все импорты
      .pipe(rename({suffix: '.min'}))              //переименовываем файл, чтобы было понятно, что он минифицирован
-    //  .pipe(prefixerprefixer({                             //добавляем вендорные префиксы
-    //    overrideBrowserslist: ['last 8 versions'], //последние 8 версий, но можно донастроить на большее или меньшее значение
-    //    browsers: [                                //список поддерживаемых браузеров и их версия - ВНИМАНИЕ! данная опция влияет только на расстановку префиксов и не гарантирут 100% работы сайта в этих браузерах.
-    //     "Android >= 4",
-    //     "Chrome >= 20",
-    //     "Firefox >= 24",
-    //     "Explorer >= 11",
-    //     "iOS >= 6",
-    //     "Opera >= 12",
-    //     "Safari >= 6"
-    // ] 
-    //   }))
+     .pipe(prefixer({                             //добавляем вендорные префиксы
+       overrideBrowserslist: ['last 8 versions'], //последние 8 версий, но можно донастроить на большее или меньшее значение
+       browsers: [                                //список поддерживаемых браузеров и их версия - ВНИМАНИЕ! данная опция влияет только на расстановку префиксов и не гарантирут 100% работы сайта в этих браузерах.
+        "Android >= 4",
+        "Chrome >= 20",
+        "Firefox >= 24",
+        "Explorer >= 11",
+        "iOS >= 6",
+        "Opera >= 12",
+        "Safari >= 6"
+    ] 
+      }))
      .pipe(sourcemaps.write())                    //записываем карту в итоговый файл
      .pipe(gulp.dest('build/css'))                //кладём итоговый файл в директорию build/css
      .pipe(browserSync.reload({stream:true}))     //обновляем браузер
@@ -47,9 +47,10 @@ let gulp              = require('gulp'),
     
     gulp.task('style', function(){                //создаём единую библиотеку из css-стилей всех плагинов
       return gulp.src([                           //указываем, где брать исходники
-         'node_modules/normalize.css/normalize.css'
+         'node_modules/normalize.css/normalize.css',
           // 'node_modules/slick-carousel/slick/slick.css',
-        //'node_modules/bootstrap/dist/css/bootstrap.min.css',
+        // 'node_modules/bootstrap/dist/css/bootstrap.min.css',
+        'node_modules/bootstrap/dist/css/bootstrap-grid.min.css'
         // 'node_modules/owl.carousel/dist/assets/owl.carousel.min.css',
         // 'node_modules/owl.carousel/dist/assets/owl.theme.default.min.css',
         

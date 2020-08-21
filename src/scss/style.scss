@@ -1,4 +1,4 @@
-@import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+
 @import url("https://fonts.googleapis.com/css?family=Aleo|Josefin+Sans:400,700&display=swap");
 
 .btn {
@@ -11,7 +11,7 @@
   font-weight: 400;
   cursor: pointer;
   letter-spacing: 1.2px;
-
+  transition: all 0.7s;
   &--header {
     padding-top: 19px;
     padding-bottom: 19px;
@@ -30,6 +30,7 @@
     line-height: 19px;
     position: relative;
     z-index: 999;
+    transition: all 0.7s;
 
     &::before {
       content: "";
@@ -41,6 +42,7 @@
       height: 60px;
       background-repeat: no-repeat;
       top: 0;
+      transition: all 0.7s;
     }
 
     &:hover::before {
@@ -63,7 +65,7 @@
     line-height: 19px;
     position: relative;
     z-index: 999;
-
+    transition: all 0.7s;
     &::before {
       content: "";
       display: block;
@@ -74,6 +76,7 @@
       height: 60px;
       background-repeat: no-repeat;
       top: 0;
+      transition: all 0.7s;
     }
 
     &:hover::before {
@@ -96,9 +99,10 @@
     line-height: 19px;
     position: relative;
     z-index: 999;
-
+    transition: all 0.7s;
     &:hover {
       background-color: #ff6363;
+      transition: all 0.7s;
     }
 
     &::before {
@@ -111,6 +115,7 @@
       height: 60px;
       background-repeat: no-repeat;
       top: 0;
+      transition: all 0.7s;
     }
 
     &:hover::before {
@@ -908,6 +913,7 @@ img {
   &__icons-link {
     text-decoration: none;
     color: #e8e8e8;
+    transition: all 0.7s;
 
     @media screen and (max-width: 575px) {
       font-size: 30px;
@@ -934,19 +940,13 @@ img {
     color: #e60023;
   }
 
-  &__logo--alt {
-    display: none;
-  }
+  // &__logo--alt {
+  //   display: none;
+  // }
 
   &__link {
     margin-bottom: 15px;
+    background-color: #232323;
     transition: all 0.7s;
-    &:hover > .footer__logo {
-      display: none;
-    }
-
-    &:hover > .footer__logo--alt {
-      display: block;
-    }
   }
 }
